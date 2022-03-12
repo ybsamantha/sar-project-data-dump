@@ -10,7 +10,7 @@ function createSQLquery(list) {
     unlink('./wrongly-quoted-products.sql', err => { if (err) console.info(err) })
     list.forEach(product => {
         product.product_colors.forEach(color => {
-            appendFile('./wrongly-quoted-products.sql', `INSERT INTO color(product_id, hex_value, colour_name) values(${product.id}, "${color.hex_value}", "${color.colour_name}");\n`, (err) => {
+            appendFile('./wrongly-quoted-colors.sql', `INSERT INTO color(product_id, hex_value, colour_name) values(${product.id}, "${color.hex_value}", "${color.colour_name}");\n`, (err) => {
                 if (err) {
                     console.error(err)
                 }

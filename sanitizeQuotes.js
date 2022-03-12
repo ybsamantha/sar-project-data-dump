@@ -6,6 +6,7 @@ function sanitizeSql(initialSql) {
     writeFile('./products.sql', singleQuotedSqlString, err => {if (err) console.error(err)})
 }
 
-readFile('./wrongly-quoted-products.sql', 'utf8', (err, data) => {
+readFile('./wrongly-quoted-products.sql','utf8', (err, data) => {
     sanitizeSql(data);
 })
+
